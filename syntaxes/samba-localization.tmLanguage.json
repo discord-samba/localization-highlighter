@@ -1,0 +1,76 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Samba Localization",
+	"patterns": [
+		{ "include": "#comment-line" },
+		{ "include": "#resource-key" },
+		{ "include": "#script-template" },
+		{ "include": "#non-script-template" }
+	],
+	"repository": {
+		"comment-line": {
+			"name": "comment.line.samba-localization",
+			"begin": "##",
+			"end": "$"
+		},
+
+		"resource-key": {
+			"match": "(?:\n|^)(\\[)(?:(\\w+)(?:\\((\\w+)\\))?:)?([\\w]+)(\\])",
+			"captures": {
+				"1": { "name": "entity.name.tag.samba-localization" },
+				"2": { "name": "variable.name.samba-localization" },
+				"3": { "name": "variable.name.samba-localization" },
+				"4": { "name": "entity.name.type.samba-localization" },
+				"5": { "name": "entity.name.tag.samba-localization" }
+			}
+		},
+
+		"script-template": {
+			"name":"none",
+			"begin": "(\\{\\{!)",
+			"end": "(!\\}\\})",
+			"beginCaptures": { "1": { "name": "entity.name.type.samba-localization" } },
+			"endCaptures": { "1": { "name": "entity.name.type.samba-localization" } },
+			"patterns": [{ "include": "source.js" }]
+		},
+		
+		"strings": {
+			"name": "string.quoted.samba-localization",
+			"begin": "([`'\"])",
+			"end": "\\1",
+			"patterns": [
+				{
+					"name": "constant.character.escape.samba-localization",
+					"match": "\\\\."
+				}
+			]
+		},
+
+		"numbers": {
+			"name": "constant.numeric.samba-localization",
+			"match": "(-?(?:\\d+|\\.\\d+|\\d+\\.\\d+))"
+		},
+
+		"booleans": {
+			"name": "constant.language.boolean.samba-localization",
+			"match": "\\b(true|false)\\b"
+		},
+
+		"non-script-template": {
+			"begin": "(\\{\\{[\\?\\>]?)",
+			"end": "(\\}\\})",
+			"beginCaptures": { "1": { "name": "entity.name.type.samba-localization" } },
+			"endCaptures": { "1": { "name": "entity.name.type.samba-localization" } },
+			"patterns": [
+				{ "include": "#strings" },
+				{ "include": "#numbers" },
+				{ "include": "#booleans" },
+				{
+					"name": "variable.name.samba-localization",
+					"match": "\\w+"
+				}
+			]
+		}
+	},
+	"scopeName": "source.lang"
+}

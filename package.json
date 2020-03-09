@@ -1,0 +1,30 @@
+{
+    "name": "samba-localization-highlighter",
+    "displayName": "samba-localization-highlighter",
+    "description": "Provides syntax highlighting for Discord-Samba's Localization file format",
+	"version": "1.0.0",
+	"repository": {
+		"url": "https://github.com/discord-samba/localization-highlighter"
+	},
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "samba-localization",
+            "aliases": ["Samba Localization", "samba-localization"],
+            "extensions": [".lang"]
+        }],
+        "grammars": [{
+            "language": "samba-localization",
+            "scopeName": "source.lang",
+			"path": "./syntaxes/samba-localization.tmLanguage.json",
+			"embeddedLanguages": {
+				"meta.embedded.block.javascript": "javascript"
+			}
+        }]
+    }
+}
