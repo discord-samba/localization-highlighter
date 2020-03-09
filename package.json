@@ -6,6 +6,7 @@
 	"repository": {
 		"url": "https://github.com/discord-samba/localization-highlighter"
 	},
+	"publisher": "discord-samba",
     "engines": {
         "vscode": "^1.42.0"
     },
