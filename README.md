@@ -1,6 +1,6 @@
 # samba-localization-highlighter README
 
-This extension provides syntax highlighting for [Discord-Samba Localization files](https://discord-samba.github.io/localization
+This extension provides syntax highlighting for [Discord-Samba Localization files](https://discord-samba.github.io/localization)
 
 ## Release Notes
 
