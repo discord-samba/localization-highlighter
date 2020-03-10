@@ -2,6 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Samba Localization",
 	"patterns": [
+		{ "include": "#argument-type-declaration-comment" },
 		{ "include": "#comment-line" },
 		{ "include": "#resource-key" },
 		{ "include": "#script-template" },
@@ -23,6 +24,21 @@
 				"4": { "name": "entity.name.type.samba-localization" },
 				"5": { "name": "entity.name.tag.samba-localization" }
 			}
+		},
+
+		"argument-type-declaration-comment": {
+			"begin": "(##!)",
+			"end": "$",
+			"beginCaptures": { "1": { "name": "comment.line.samba-localization" } },
+			"patterns": [
+				{
+					"match": "(\\w+)\\??\\s*:\\s*(\\w+)",
+					"captures": {
+						"1": { "name": "variable.name.samba-localization" },
+						"2": { "name": "entity.name.type.samba-localization" }
+					}
+				}
+			]
 		},
 
 		"script-template": {
