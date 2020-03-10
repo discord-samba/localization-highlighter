@@ -45,8 +45,8 @@
 			"name":"none",
 			"begin": "(\\{\\{!)",
 			"end": "(!\\}\\})",
-			"beginCaptures": { "1": { "name": "entity.name.type.samba-localization" } },
-			"endCaptures": { "1": { "name": "entity.name.type.samba-localization" } },
+			"beginCaptures": { "1": { "name": "entity.name.tag.samba-localization" } },
+			"endCaptures": { "1": { "name": "entity.name.tag.samba-localization" } },
 			"patterns": [{ "include": "source.js" }]
 		},
 		
@@ -75,12 +75,17 @@
 		"non-script-template": {
 			"begin": "(\\{\\{[\\?\\>]?)",
 			"end": "(\\}\\})",
-			"beginCaptures": { "1": { "name": "entity.name.type.samba-localization" } },
-			"endCaptures": { "1": { "name": "entity.name.type.samba-localization" } },
+			"beginCaptures": { "1": { "name": "entity.name.tag.samba-localization" } },
+			"endCaptures": { "1": { "name": "entity.name.tag.samba-localization" } },
 			"patterns": [
 				{ "include": "#strings" },
 				{ "include": "#numbers" },
 				{ "include": "#booleans" },
+				{
+					"begin": "\\|",
+					"end": "(\\w+)",
+					"endCaptures": { "1": { "name": "entity.name.function" } }
+				},
 				{
 					"name": "variable.name.samba-localization",
 					"match": "\\w+"
