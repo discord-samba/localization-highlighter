@@ -10,4 +10,4 @@ This extension provides syntax highlighting for [Discord-Samba Localization file
 
 ### 1.0.0
 
-Initial release
+- Initial release
