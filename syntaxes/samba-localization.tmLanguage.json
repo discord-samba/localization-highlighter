@@ -10,7 +10,7 @@
 	],
 	"repository": {
 		"comment-line": {
-			"name": "comment.line.samba-localization",
+			"name": "comment.line.lang",
 			"begin": "##",
 			"end": "$"
 		},
@@ -18,24 +18,24 @@
 		"resource-key": {
 			"match": "(?:\n|^)(\\[)(?:(\\w+)(?:\\((\\w+)\\))?:)?([\\w]+)(\\])",
 			"captures": {
-				"1": { "name": "entity.name.tag.samba-localization" },
-				"2": { "name": "variable.name.samba-localization" },
-				"3": { "name": "variable.name.samba-localization" },
-				"4": { "name": "entity.name.type.samba-localization" },
-				"5": { "name": "entity.name.tag.samba-localization" }
+				"1": { "name": "entity.name.tag.lang" },
+				"2": { "name": "variable.name.lang" },
+				"3": { "name": "variable.name.lang" },
+				"4": { "name": "entity.name.type.lang" },
+				"5": { "name": "entity.name.tag.lang" }
 			}
 		},
 
 		"argument-type-declaration-comment": {
 			"begin": "(##!)",
 			"end": "$",
-			"beginCaptures": { "1": { "name": "comment.line.samba-localization" } },
+			"beginCaptures": { "1": { "name": "comment.line.lang" } },
 			"patterns": [
 				{
 					"match": "(\\w+)\\??\\s*:\\s*(\\w+)",
 					"captures": {
-						"1": { "name": "variable.name.samba-localization" },
-						"2": { "name": "entity.name.type.samba-localization" }
+						"1": { "name": "variable.name.lang" },
+						"2": { "name": "entity.name.type.lang" }
 					}
 				}
 			]
@@ -45,38 +45,38 @@
 			"name":"none",
 			"begin": "(\\{\\{!)",
 			"end": "(!\\}\\})",
-			"beginCaptures": { "1": { "name": "entity.name.tag.samba-localization" } },
-			"endCaptures": { "1": { "name": "entity.name.tag.samba-localization" } },
+			"beginCaptures": { "1": { "name": "entity.name.tag.lang" } },
+			"endCaptures": { "1": { "name": "entity.name.tag.lang" } },
 			"patterns": [{ "include": "source.js" }]
 		},
 		
 		"strings": {
-			"name": "string.quoted.samba-localization",
+			"name": "string.quoted.lang",
 			"begin": "([`'\"])",
 			"end": "\\1",
 			"patterns": [
 				{
-					"name": "constant.character.escape.samba-localization",
+					"name": "constant.character.escape.lang",
 					"match": "\\\\."
 				}
 			]
 		},
 
 		"numbers": {
-			"name": "constant.numeric.samba-localization",
+			"name": "constant.numeric.lang",
 			"match": "(-?(?:\\d+|\\.\\d+|\\d+\\.\\d+))"
 		},
 
 		"booleans": {
-			"name": "constant.language.boolean.samba-localization",
+			"name": "constant.language.boolean.lang",
 			"match": "\\b(true|false)\\b"
 		},
 
 		"non-script-template": {
 			"begin": "(\\{\\{[\\?\\>]?)",
 			"end": "(\\}\\})",
-			"beginCaptures": { "1": { "name": "entity.name.tag.samba-localization" } },
-			"endCaptures": { "1": { "name": "entity.name.tag.samba-localization" } },
+			"beginCaptures": { "1": { "name": "entity.name.tag.lang" } },
+			"endCaptures": { "1": { "name": "entity.name.tag.lang" } },
 			"patterns": [
 				{ "include": "#strings" },
 				{ "include": "#numbers" },
@@ -84,10 +84,10 @@
 				{
 					"begin": "\\|",
 					"end": "(\\w+)",
-					"endCaptures": { "1": { "name": "entity.name.function" } }
+					"endCaptures": { "1": { "name": "entity.name.function.lang" } }
 				},
 				{
-					"name": "variable.name.samba-localization",
+					"name": "variable.name.lang",
 					"match": "\\w+"
 				}
 			]
