@@ -4,6 +4,10 @@ This extension provides syntax highlighting for [Discord-Samba Localization file
 
 ## Release Notes
 
+### 1.0.3
+
+- Update extension display name
+
 ### 1.0.2
 
 - Change highlight scope for template braces

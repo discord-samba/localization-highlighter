@@ -2,7 +2,11 @@
 
 All notable changes to the "samba-localization-highlighter" extension will be documented in this file.
 
-### 1.0.2
+## 1.0.3
+
+- Update extension display name
+
+## 1.0.2
 
 - Change highlight scope for template braces
 - Add function highlight scope for pipe functions
