@@ -81,6 +81,7 @@
 			"beginCaptures": { "1": { "name": "entity.name.tag.lang" } },
 			"endCaptures": { "1": { "name": "entity.name.tag.lang" } },
 			"patterns": [
+				{ "include": "#comment-line" },
 				{ "include": "#strings" },
 				{ "include": "#numbers" },
 				{ "include": "#booleans" },

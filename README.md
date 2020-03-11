@@ -4,6 +4,14 @@ This extension provides syntax highlighting for [Discord-Samba Localization file
 
 ## Release Notes
 
+### 1.0.5
+
+- Add highlighting for comments within non-script templates
+
+### 1.0.4
+
+- Update token scopes
+
 ### 1.0.3
 
 - Update extension display name
