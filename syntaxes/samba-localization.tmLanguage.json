@@ -8,7 +8,8 @@
 		{ "include": "#comment-line" },
 		{ "include": "#resource-key" },
 		{ "include": "#script-template" },
-		{ "include": "#non-script-template" }
+		{ "include": "#match-template" },
+		{ "include": "#other-template" }
 	],
 
 	"repository": {
@@ -44,15 +45,6 @@
 			]
 		},
 
-		"script-template": {
-			"name":"none",
-			"begin": "(\\{\\{!)",
-			"end": "(!\\}\\})",
-			"beginCaptures": { "1": { "name": "entity.name.tag.lang" } },
-			"endCaptures": { "1": { "name": "entity.name.tag.lang" } },
-			"patterns": [{ "include": "source.js" }]
-		},
-		
 		"strings": {
 			"name": "string.quoted.lang",
 			"begin": "([`'\"])",
@@ -75,7 +67,46 @@
 			"match": "\\b(true|false)\\b"
 		},
 
-		"non-script-template": {
+
+		"script-template": {
+			"begin": "(\\{\\{!)",
+			"end": "(!\\}\\})",
+			"beginCaptures": { "1": { "name": "entity.name.tag.lang" } },
+			"endCaptures": { "1": { "name": "entity.name.tag.lang" } },
+			"patterns": [{ "include": "source.js" }]
+		},
+
+		"match-template": {
+			"begin": "(\\{\\{#)",
+			"end": "(\\}\\})",
+			"beginCaptures": { "1": { "name": "entity.name.tag.lang" } },
+			"endCaptures": { "1": { "name": "entity.name.tag.lang" } },
+			"patterns": [
+				{ "include": "#comment-line" },
+				{ "include": "#strings" },
+				{ "include": "#numbers" },
+				{ "include": "#booleans" },
+				{
+					"begin": "\\|",
+					"end": "(\\w+)",
+					"endCaptures": { "1": { "name": "entity.name.function.lang" } }
+				},
+				{
+					"name": "variable.name.lang",
+					"match": "\\w+"
+				},
+				{
+					"match": ":",
+					"captures": { "1": { "name": "punctuation.separator.key-value.lang" } }
+				},
+				{
+					"name": "storage.type.function.arrow.lang",
+					"match": "=>"
+				}
+			]
+		},
+
+		"other-template": {
 			"begin": "(\\{\\{[\\?\\>]?)",
 			"end": "(\\}\\})",
 			"beginCaptures": { "1": { "name": "entity.name.tag.lang" } },

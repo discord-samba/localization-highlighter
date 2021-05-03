@@ -2,6 +2,10 @@
 
 All notable changes to the "samba-localization-highlighter" extension will be documented in this file.
 
+## 1.0.6
+
+- Add highlighting for match templates
+
 ## 1.0.5
 
 - Add highlighting for comments within non-script templates
