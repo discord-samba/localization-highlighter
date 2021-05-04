@@ -4,7 +4,7 @@ This extension provides syntax highlighting for [Discord-Samba Localization file
 
 ## Release Notes
 
-## 1.0.6
+### 1.0.6
 
 - Add highlighting for match templates
 
